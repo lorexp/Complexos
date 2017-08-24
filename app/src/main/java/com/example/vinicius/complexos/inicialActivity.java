@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -62,42 +63,50 @@ public class inicialActivity extends Activity {
     }
 
     public void Calcular(View view) {
-        respostas.setText(R.string.resposta);
-        NumberFormat format = NumberFormat.getInstance();
-        format.setMaximumFractionDigits(4);
-        format.setMinimumFractionDigits(2);
-        format.setMaximumIntegerDigits(2);
-        format.setRoundingMode(RoundingMode.HALF_UP);
-        Double Z, valorB, a, b, angulo;
-        if (polar.isSelected()) {
-            Z = Double.valueOf(valor1.getText().toString());
-            valorB = Double.valueOf(valor2.getText().toString());
-
-            angulo = (Math.PI / 180) * valorB;
-            a = Z * Math.cos(angulo);
-            b = Z * Math.sin(angulo);
-
-            if (b >= 0) {
-
-                resposta.setText(format.format(a) + " +" + format.format(b) + "j");
-            } else {
-                resposta.setText(format.format(a) + " " + format.format(b) + "j");
-            }
-
-
+        if (valor1.getText().length() == 0) {
+            valor1.setError("Campo Vazio");
         } else {
-                a = Double.valueOf(valor1.getText().toString());
-                b = Double.valueOf(valor2.getText().toString());
+            if (valor2.getText().length() == 0) {
+                valor2.setError("Campo Vazio");
+            } else {
+                respostas.setText(R.string.resposta);
+                NumberFormat format = NumberFormat.getInstance();
+                format.setMaximumFractionDigits(4);
+                format.setMinimumFractionDigits(2);
+                format.setMaximumIntegerDigits(2);
+                format.setRoundingMode(RoundingMode.HALF_UP);
+                Double Z, valorB, a, b, angulo;
+                if (polar.isSelected()) {
+                    Z = Double.valueOf(valor1.getText().toString());
+                    valorB = Double.valueOf(valor2.getText().toString());
 
-                valorB = (b / a);
+                    angulo = (Math.PI / 180) * valorB;
+                    a = Z * Math.cos(angulo);
+                    b = Z * Math.sin(angulo);
 
-                Z = Math.sqrt((a * a) + (b * b));
-                angulo = Math.toDegrees(Math.atan(valorB));
+                    if (b >= 0) {
 
-                resposta.setText(format.format(Z) + "  Ângulo de " + format.format(angulo) + " º");
+                        resposta.setText(format.format(a) + " +" + format.format(b) + "j");
+                    } else {
+                        resposta.setText(format.format(a) + " " + format.format(b) + "j");
+                    }
+
+
+                } else {
+                    a = Double.valueOf(valor1.getText().toString());
+                    b = Double.valueOf(valor2.getText().toString());
+
+                    valorB = (b / a);
+
+                    Z = Math.sqrt((a * a) + (b * b));
+                    angulo = Math.toDegrees(Math.atan(valorB));
+
+                    resposta.setText(format.format(Z) + "  Ângulo de " + format.format(angulo) + " º");
+                }
+
             }
-
-        }
+        }   
+    }
     public void LimparCampos(View view){
         resposta.setText(null);
         valor1.setText(null);
