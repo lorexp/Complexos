@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Complexos</string>
+    <string name="entrada">Tipo de Entrada</string>
+    <string name="retangular">Retangular</string>
+    <string name="polar">Polar</string>
+    <string name="calcular">Calcular</string>
+    <string name="resposta">Resposta</string>
+    <string name="valorA">Valor de A</string>
+    <string name="valorB">Valor de B</string>
+    <string name="limpar_campo">Limpar Campos</string>
+
+</resources>

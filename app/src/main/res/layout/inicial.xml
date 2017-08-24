@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/entrada"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="0,1,2">
+
+
+        <RadioGroup
+            android:id="@+id/tipoEntrada"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/retangular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/retangular"
+                android:checked="true"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/polar"
+                android:text="@string/polar"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+        </RadioGroup>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/texto1"
+                android:text="@string/valorA"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                />
+            <TextView
+                android:id="@+id/texto2"
+                android:text="@string/valorB"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+        </TableRow>
+
+        <TableRow>
+            <EditText
+                android:id="@+id/valor1"
+                android:inputType="numberDecimal|numberSigned" />
+
+            <EditText
+                android:id="@+id/valor2"
+                android:inputType="numberDecimal|numberSigned"/>
+
+        </TableRow>
+            <Button
+                android:id="@+id/calcular"
+                android:text="@string/calcular"
+                android:layout_marginTop="20dp"
+                android:onClick="Calcular"
+                />
+
+
+
+
+    </TableLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/respostas"/>
+
+        <TextView
+            android:id="@+id/resposta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/limpar_campo"
+            android:onClick="LimparCampos"
+            android:layout_marginTop="100dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
