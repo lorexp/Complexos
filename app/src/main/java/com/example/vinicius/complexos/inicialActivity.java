@@ -53,8 +53,8 @@ public class inicialActivity extends Activity {
         polar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                view1.setText("Valor de Z");
-                view2.setText("Valor do Ângulo");
+                view1.setText(R.string.valorZ);
+                view2.setText(R.string.valorAngulo);
                 polar.setSelected(true);
                 retangular.setSelected(false);
             }

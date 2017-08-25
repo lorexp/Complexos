@@ -5,8 +5,10 @@
     <string name="polar">Polar</string>
     <string name="calcular">Calcular</string>
     <string name="resposta">Resposta</string>
-    <string name="valorA">Valor de A</string>
-    <string name="valorB">Valor de B</string>
+    <string name="valorA">Valor Real</string>
+    <string name="valorB">Valor Imaginário</string>
     <string name="limpar_campo">Limpar Campos</string>
-
+    <string name="valorZ">Valor do Z</string>
+    <string name="valorAngulo">Valor do Ângulo</string>
+    <string name="campovazio">Campo Vazio</string>
 </resources>
