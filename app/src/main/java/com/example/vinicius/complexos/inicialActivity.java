@@ -105,7 +105,7 @@ public class inicialActivity extends Activity {
                 }
 
             }
-        }   
+        }
     }
     public void LimparCampos(View view){
         resposta.setText(null);
